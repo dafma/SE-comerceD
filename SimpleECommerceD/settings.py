@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shop',
+    'cart',
+    'orders',
+    # 'paypal.standard.ipn',
+    'payment',
+    'coupons',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+CART_SESSION_ID ='cart'
+CART_SESSION_IDC = 'comparar'
