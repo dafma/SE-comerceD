@@ -54,17 +54,19 @@
                                   <span>Descripción</span>
                                   <span class="mdl-list__item-text-body">
                                     {{ producto.descripcion|linebreaks }}
-                                  </span>
-                                </span>
-                              </li>
-                          </ul>
-                            <form action="{% url "cart:cart_add" producto.id %}" method="post">
+                                      <br>
+                                                                  <form action="{% url "cart:cart_add" producto.id %}" method="post">
                                 {% csrf_token %}
                                 <div class="mdl-textfield mdl-js-textfield md-textfield--floating-label">
                                     {{ cart_product_form }}
                                 </div>
                                 <input type="submit" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--colored" value="Agregar al carrito">
                             </form>
+                                  </span>
+                                </span>
+                              </li>
+                          </ul>
+
 					 </div>
 				 </div>
 				 <div class="clearfix"> </div>
