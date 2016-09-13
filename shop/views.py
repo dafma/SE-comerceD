@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import Producto, Categoria
 from cart.forms import CartAddProductForm, CompararAddProductForm
-from .forms import SearchForm
 # Create your views here.
 
 def producto_lista(request, category_slug=None):
@@ -20,8 +19,7 @@ def producto_lista(request, category_slug=None):
 
                   })
 
-def productos_lista(request):
-    return render(request, 'shop/producto/lista-filtrado.html')
+
 
 def producto_detalle(request, id, slug):
     producto = get_object_or_404(Producto,
