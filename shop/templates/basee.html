@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}My shop{% endblock %}</title>
+    {% load staticfiles %}
+<!-- Custom Theme files -->
+<!--theme style-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<style>
+  .demo-card-square.mdl-card {
+    width: 15%;
+    height: 30%;
+    float: left;
+    margin: .5rem;
+    position: relative;
+  }
+
+  .demo-card-square.mdl-card:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+  }
+
+  .demo-card-square > .mdl-card__title {
+    color: #fff;
+    background: #03a9f4;
+  }
+
+  .demo-card-square > .mdl-card__accent {
+    background: #ff9800;
+  }
+    .mdl-card__media > img {
+  max-width: 100%;
+}
+    .mdl-card__actions {
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+}
+.mdl-card__actions > .mdl-button--icon {
+	margin-right: 3px;
+	margin-left: 3px;
+}
+    .mdl-layout__header-row {
+  padding-right: 15px;
+}
+
+.mdl-layout__header-row  .mdl-layout-spacer {
+  text-align: right;
+}
+
+.page-content button.mdl-button--fab {
+  position: fixed;
+  top: auto;
+  right: 30px;
+  bottom: 30px;
+  left: auto;
+  z-index: 9999;
+  -webkit-box-shadow: 0 5px 5px rgba(0,0,0,.25);
+          box-shadow: 0 5px 5px rgba(0,0,0,.25);
+}
+
+.demo-card-wide.mdl-card {
+  width: 90%;
+  max-width: 512px;
+  margin: 25px auto;
+}
+
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background-color: #fafafa;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0 -35px 25px rgba(0,0,0,.5);
+          box-shadow: inset 0 -35px 25px rgba(0,0,0,.5);
+}
+
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+</style>
+{% block cssadd %}
+
+{% endblock %}
+
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+   <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">AdminMyCCs</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer">
+        <button id="demo-menu-lower-right"
+        class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">more_vert</i>
+        </button>
+
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for="demo-menu-lower-right">
+          <li class="mdl-menu__item">Help & tips</li>
+          <li class="mdl-menu__item">Rate the app</li>
+          <li disabled class="mdl-menu__item">Disabled option</li>
+          <li class="mdl-menu__item">Known issues</li>
+        </ul>
+      </div>
+      <!-- Navigation. We hide it in small screens. -->
+    </div>
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Visa &mdash; 3452</a>
+      <a href="#scroll-tab-2" class="mdl-layout__tab">MasterCard &mdash; 9850</a>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Menu</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">News</a>
+      <a class="mdl-navigation__link" href="">Register</a>
+      <a class="mdl-navigation__link" href="">Login</a>
+      <a class="mdl-navigation__link" href="">FAQs</a>
+      <a class="mdl-navigation__link" href="">About</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="  mdl-color--grey-100">
+		    <div class="mdl-grid">
+                {% block contenido %}
+                {% endblock %}
+            </div>
+        </div>
+      </div>
+  </main>
+</div>
+{#								<div class="col1 me-one">#}
+{#									<h4>Categorias</h4>#}
+{#                                    <ul>#}
+{#                                        {% for c in categorias %}#}
+{#                                         {% if categoria.slug == c.slug %}class="selected"{% endif %}#}
+{#                                            <li><a href="{{ c.get_absolute_url }}">{{ c.nombre }}</a></li>#}
+{#                                        {% endfor %}#}
+{#									</ul>#}
+{#								</div>#}
+
+
+{#					<li class="grid">#}
+{#                        <form role="search" action="/s">#}
+{#                            <div>#}
+{#                                <label>#}
+{#                                    <input placeholder="buscar" type="text" name="q">#}
+{#                                    <input type="submit" >#}
+{#                                </label>#}
+{#                            </div>#}
+{#				        </form>#}
+{#                    </li>#}
+
+
+			 <!---->
+			 <div class="">
+			 </div>
+
+<script src="{% static 'js/bootstrap.js' %}"> </script>
+<!---->
+<div class="offer">
+
+<!---->
+<div class="subscrib">
+</div>
+<!---->
+<div class="footer">
+
+</div>
+    </div>
+{% block jsadd %}
+
+{% endblock %}
+{#                      {% with total_items=cart|length %}#}
+{#              {% if cart|length > 0 %}#}
+{#                  <i class="material-icons">add_shopping_cart</i>#}
+{#                  <a href="{% url "cart:cart_detail" %}">#}
+{#                      ${{ cart.get_total_price }}#}
+{#                      <div class="total">#}
+{#                          ({{ total_items }})</div>#}
+{#                  </a>#}
+{#              {% else %}#}
+{#                  <i class="material-icons">add_shopping_cart</i>#}
+{#                  Carrito  Vacio.#}
+{#              {% endif %}#}
+{#          {% endwith %}#}
+
+<!---->
+</body>
+</html>

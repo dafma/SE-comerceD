@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+Tu carito de compras
+{% endblock %}
+{% block contenido %}
+    <h1>Comparador</h1>
+
+    <div class="check-sec">
+		<div class="col-md-9 cart-items">
+			<h1>Productos</h1>
+
+			<div class="cart-header">
+
+                {% for item in comparar %}
+                    {% with product=item.product %}
+                            <div class="cart-item cyc">
+                                <img src="{{ product.imagen.url}}">
+						    </div>
+                            <div class="cart-item-info">
+						        <h3><a href="single.html">{{ product.nombre }}</a><span>Model No: RL-5511S</span></h3>
+							    <ul class="qty">
+								    <li>
+                                        <p>Precio :{{ item.price }}</p>
+                                    </li>
+                                    <li><p><a href="{% url "cart:cart_remove" product.id%}">Eiminar</a> </p></li>
+							    </ul>
+							    <div class="delivery">
+								     <p></p>
+								    <span></span>
+								    <div class="clearfix"></div>
+							    </div>
+					        </div>
+                    {% endwith %}
+                {% endfor %}
+            </div>
+
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+
+{% endblock %}
