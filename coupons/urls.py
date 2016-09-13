@@ -17,14 +17,5 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
 
-    url(r'^s/', 'shop.views.search_productt', name='search_productt'),
-    ################################################################## buscar
-    url(r'^paypal/', include('paypal.standard.ipn.urls')),
-    url(r'^cart/', include('cart.urls', namespace='cart')),
-    url(r'^', include('shop.urls', namespace='shop')),
-    url(r'^ordern/', include('orders.urls', namespace='orders')),
-    url(r'^payment/', include('payment.urls', namespace='payment')),
-    url(r'^coupons/', include('coupons.urls', namespace='coupons')),
 ]
