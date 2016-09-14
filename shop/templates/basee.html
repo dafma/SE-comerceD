@@ -5,6 +5,7 @@
     {% load staticfiles %}
 <!-- Custom Theme files -->
 <!--theme style-->
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
@@ -99,7 +100,12 @@
             <span class="mdl-layout-title">Solidfounds-Ecommerce</span>
         </a>
       <!-- Add spacer, to align navigation to the right -->
+
+
       <div class="mdl-layout-spacer">
+          <button id="demo-menu-lower-right-cart" class="mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">shopping_cart</i>
+          </button>
         <button id="demo-menu-lower-right"
         class="mdl-button mdl-js-button mdl-button--icon">
           <i class="material-icons">more_vert</i>
@@ -122,6 +128,24 @@
           <li class="mdl-menu__item">Rate the app</li>
           <li disabled class="mdl-menu__item">Disabled option</li>
           <li class="mdl-menu__item">Known issues</li>
+        </ul>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right-cart">
+          <li class="mdl-menu__item">
+              {% with total_items=cart|length %}
+              {% if cart|length > 0 %}
+                  <i class="material-icons">add_shopping_cart</i>
+                  <a href="{% url "cart:cart_detail" %}">
+                      ${{ cart.get_total_price }}
+                      <div class="total">
+                          ({{ total_items }})</div>
+                  </a>
+              {% else %}
+                  <i class="material-icons">add_shopping_cart</i>
+                  Carrito  Vacio.
+              {% endif %}
+          {% endwith %}
+          </li>
+
         </ul>
       </div>
       <!-- Navigation. We hide it in small screens. -->
@@ -195,19 +219,7 @@
 {% block jsadd %}
 
 {% endblock %}
-{#                      {% with total_items=cart|length %}#}
-{#              {% if cart|length > 0 %}#}
-{#                  <i class="material-icons">add_shopping_cart</i>#}
-{#                  <a href="{% url "cart:cart_detail" %}">#}
-{#                      ${{ cart.get_total_price }}#}
-{#                      <div class="total">#}
-{#                          ({{ total_items }})</div>#}
-{#                  </a>#}
-{#              {% else %}#}
-{#                  <i class="material-icons">add_shopping_cart</i>#}
-{#                  Carrito  Vacio.#}
-{#              {% endif %}#}
-{#          {% endwith %}#}
+
 
 <!---->
 </body>

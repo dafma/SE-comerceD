@@ -1,32 +1,79 @@
-{% extends "base.html" %}
+{% extends "basee.html" %}
 
 {% block title %}
     Pagar
 {% endblock %}
 {% block contenido %}
-    <h1>Revisar</h1>
-    <div class="registration_form">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <h1>Revisar</h1>
+            <div class="registration_form">
         <h3>Tu orden</h3>
-        <ul>
-         {% for item in cart %}
-             <li>
-             {{ item.quantity }}x {{ item.product.name }}
-             <span>${{ item.total_price }}</span>
-             </li>
-             {% endfor %}
-             {% if cart.coupon %}
-             <li>
-             "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
-             <span>- ${{ cart.get_discount|floatformat:"2" }}</span>
-             </li>
-         {% endif %}
-        </ul>
-        <p>Total: ${{ cart.get_total_price_after_discount|floatformat:"2" }}</
-p>
+
+
+             <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Nombre</th>
+                      <th>Cantidad</th>
+                      <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                 <tbody>
+                  {% for item in cart %}
+                      <tr>
+                          <td class="mdl-data-table__cell--non-numeric">{{ item.product.nombre }} </td>
+                          <td>{{ item.quantity }}</td>
+                          <td> {{ item.total_price }}</td>
+                      </tr>
+                  {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td>Total:</td>
+                        <td> ${{ cart.get_total_price_after_discount|floatformat:"2" }}</td>
+                    </tr>
+                 </tbody>
+             </table>
+
+                 {% if cart.coupon %}
+                 "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
+                 <span>- ${{ cart.get_discount|floatformat:"2" }}</span>
+                {% endif %}
+
+
     </div>
-    <form action="." method="post" class="order-form">
-        {{ form.as_p }}
-        <p><input type="submit" value="Confirmar Orden"></p>
-        {% csrf_token %}
+        </div>
+        <div class="mdl-cell mdl-cell--3-col"></div>
+        <div class="mdl-cell mdl-cell--5-col">
+            <form action="." method="post" class="order-form">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  {{ form.nombre }}
+                  <label for="float" class="mdl-textfield__label">Nombre</label>
+                 </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  {{ form.apellidos}}
+                  <label for="float" class="mdl-textfield__label">Apellidos</label>
+                 </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  {{ form.email }}
+                  <label for="float" class="mdl-textfield__label">Email</label>
+                 </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  {{ form.direccion }}
+                  <label for="float" class="mdl-textfield__label">Dirección</label>
+                 </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  {{ form.codigo_postal }}
+                  <label for="float" class="mdl-textfield__label">Codigo Postal</label>
+                 </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  {{ form.ciudad }}
+                  <label for="float" class="mdl-textfield__label">Ciudad</label>
+                 </div>
+            <p><input type="submit" value="Confirmar Orden" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--colored"></p>
+            {% csrf_token %}
     </form>
+        </div>
+    </div>
 {% endblock %}

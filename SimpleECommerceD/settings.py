@@ -118,3 +118,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID ='cart'
 CART_SESSION_IDC = 'comparar'
+
+PAYPAL_RECEIVER_EMAIL = 'mar_tp@hotmail.es'
+PAYPAL_TEST = True
