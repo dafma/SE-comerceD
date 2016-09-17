@@ -1,11 +1,8 @@
 from django.db import models
-
 # Create your models here.
-
 from django.core.urlresolvers import reverse
 
 # Create your models here.
-
 class Categoria(models.Model):
     nombre = models.CharField(max_length=200,db_index=True)
     slug = models.SlugField(max_length=200,db_index=True, unique=True)
@@ -21,7 +18,6 @@ class Categoria(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category',
                         args=[self.slug])
-
 
 class Producto(models.Model):
     categoria = models.ForeignKey(Categoria, related_name='productos')

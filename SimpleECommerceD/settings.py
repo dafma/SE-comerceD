@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'orders',
     'paypal.standard.ipn',
     'payment',
-    'coupons'
+    'coupons',
     'api',
     'rest_framework',
 ]
