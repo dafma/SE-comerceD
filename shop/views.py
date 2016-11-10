@@ -8,6 +8,7 @@ def producto_lista(request, category_slug=None):
     categoria = None
     categorias = Categoria.objects.all()
     productos = Producto.objects.filter(disponible=True)
+    zapatos = Producto.objects.filter(categoria__nombre="Zapatos")
     if category_slug:
         categoria = get_object_or_404(Categoria, slug=category_slug)
         productos = productos.filter(categoria=categoria)
@@ -15,7 +16,8 @@ def producto_lista(request, category_slug=None):
                   'shop/producto/list.html',
                   { 'categoria':categoria,
                     'categorias':categorias,
-                    'productos':productos
+                    'productos':productos,
+                    'zapatos':zapatos
 
                   })
 
