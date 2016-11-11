@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'coupons',
     'api',
     'rest_framework',
-    'buppanel',  #panel para busqueda avanzada de productos
+    'buppanel'  
+    #panel para busqueda avanzada de productos
 ]
 
 MIDDLEWARE = [

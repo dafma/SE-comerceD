@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-
 from .models import Producto, Categoria
 from cart.forms import CartAddProductForm, CompararAddProductForm
 # Create your views here.
