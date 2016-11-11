@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^ordern/', include('orders.urls', namespace='orders')),
     url(r'^payment/', include('payment.urls', namespace='payment')),
     url(r'^coupons/', include('coupons.urls', namespace='coupons')),
+    url(r'^panel/', include('buppanel.urls', namespace='panel')),
     url(r'^api/', include('api.urls', namespace='api')),
 ]
 

@@ -115,8 +115,8 @@
           </li>
           <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-laptop"></i> Blog<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
-              <ul>
-                <li><a href="http://mdbootstrap.com/live/_MDB/templates/Ecommerce/post.html" class="waves-effect">Right Column Post V.1</a>
+              <ul>{}
+                <li><a href="#" class="waves-effect">Right Column Post V.1</a>
                 </li>
                 <li><a href="http://mdbootstrap.com/live/_MDB/templates/Ecommerce/blog-post.html" class="waves-effect">Right Column Post V.2</a>
                 </li>
@@ -170,26 +170,19 @@
         </ul>
       </li>
       <!--/. Side navigation links -->
-
         </ul>
         <!--/. Sidebar navigation -->
-
         <!--Navbar-->
         <nav class="navbar navbar-fixed-top scrolling-navbar double-nav">
-
             <!-- SideNav slide-out button -->
             <div class="float-xs-left">
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
             </div>
-
             <!-- Breadcrumb-->
             <div class="breadcrumb-dn">
                 <p>Default Homepage</p>
             </div>
-
-
             <ul class="nav navbar-nav float-xs-right">
-
                 <li class="nav-item ">
                     <a class="nav-link"> <span class="tag red z-depth-1">2</span> <i class="fa fa-shopping-cart"></i> <span class="hidden-sm-down">Mi Carrito</span></a>
                 </li>
@@ -198,9 +191,10 @@
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link"><i class="fa fa-comments-o"></i> <span class="hidden-sm-down">Soporte</span></a>
+                    
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Registrate</span></a>
+                    <a class="nav-link" href="{%  url "panel:panelp" %}"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Busqueda Avanzada</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Perfil</span></a>
@@ -210,7 +204,6 @@
                     </div>
                 </li>
             </ul>
-
         </nav>
         <!--/.Navbar-->
     </header>
@@ -232,15 +225,12 @@
 
                 <!--First row-->
                 <div class="row">
-                    {% block zapatos %}
-                        
+                    {% block zapatos %}  
                     {% endblock zapatos %}
                     <!--First column-->
-
                     <!--/First column-->
                 </div>
                 <!--/First row-->
-
             </section>
             {% block despues %}
                 
