@@ -3,23 +3,19 @@
 <main id="mainContainer">
 		<!-- Main Container -->
 		<div class="container">
-
 			<div class="row">
-
 				<!-- Content -->
 				<div class="col-lg-9">
 					<!-- Filter Area -->
 					<div class="row">
 						<div class="col-xs-6 col-md-5">
 							<!-- Sort by -->
-
 								<select class="mdb-select">
 									<option value="" disabled selected>Choose your option</option>
 									<option value="1">Default sorting</option>
 									<option value="2">Sort by price</option>
 									<option value="3">Sort by popularity</option>
 								</select>
-
 							<!-- /.Sort by -->
 						</div>
 						<div class="col-xs-6 col-md-7 text-xs-right">
@@ -30,477 +26,118 @@
 						</div>
 					</div>
 					<!-- /.Filter Area -->
-
 					<!-- Products Grid -->
-					
 					<section class="section">
 						<!-- First row -->
+						{% for product  in productos  %}
+							<div class="col-lg-4 col-xs-12">
+								<!--Card-->
+								<div class="card">
+									<!--Card image-->
+									<a href="{{ product.get_absolute_url}}">
+									<div class="view overlay hm-white-slight">
+										<img  class="img-fluid" src="{{ product.imagen.url }}" alt="Card image cap">
+										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
+											<div class="mask">
+												<div class="flex-center product-quick-look">
+													<i class="fa fa-eye" aria-hidden="true"></i>
+												</div>
+											</div>
+										</a>
+									</div>
+									</a>
+									<!--/.Card image-->
+									<!--Card content-->
+									<div class="card-block text-xs-center">
+										<!--Title-->
+										<h4 class="card-title">{{ product.nombre }}</h4>
+										<!--Review-->
+										<div class="orange-text">
+											<i class="fa fa-star"> </i>
+											<i class="fa fa-star"> </i>
+											<i class="fa fa-star"> </i>
+											<i class="fa fa-star"> </i>
+											<i class="fa fa-star"> </i>
+										</div>	
+										<!--Text-->
+										<p class="card-text price"><span class="green-text"><strong>${{ product.precio }}</strong></span> <span class="grey-text"><small><s>$120</s></small></span></p>
+										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Agregar al Carrito</a>
+									</div>
+									<!--/.Card content-->
+
+								</div>
+								<!--/.Card-->
+							</div>
+						{% endfor %}
 						<div class="row wow fadeIn">
-
-							<!-- First column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-										<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(7).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-										</div>	
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$99</strong></span> <span class="grey-text"><small><s>$120</s></small></span></p>
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
-							<!-- Second column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-									<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(8).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star-o"> </i>
-										</div>
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$49</strong></span> <span class="grey-text"><small><s>$89</s></small></span></p>
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
-							<!-- Third column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-									<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(6).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-										</div>	
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$69</strong></span> <span class="grey-text"><small><s>$129</s></small></span></p>
-										
-
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
 						</div>
-						<!-- /.First row -->
-
-						<!-- Second row -->
 						<div class="row mt-1 wow fadeIn" data-wow-delay="0.3s">
-							
-							<!-- First column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-										<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(7).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-										</div>	
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$99</strong></span> <span class="grey-text"><small><s>$120</s></small></span></p>
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
-							<!-- Second column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-									<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(8).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star-o"> </i>
-										</div>
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$49</strong></span> <span class="grey-text"><small><s>$89</s></small></span></p>
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
-							<!-- Third column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-									<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(6).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-										</div>	
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$69</strong></span> <span class="grey-text"><small><s>$129</s></small></span></p>
-										
-
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
 						</div>
-						<!-- /.Second row -->
-
-						<!-- Third row -->
 						<div class="row mt-1 wow fadeIn" data-wow-delay="0.6s">
-							<!-- First column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-										<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(7).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-										</div>	
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$99</strong></span> <span class="grey-text"><small><s>$120</s></small></span></p>
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
-							<!-- Second column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-									<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(8).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star-o"> </i>
-										</div>
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$49</strong></span> <span class="grey-text"><small><s>$89</s></small></span></p>
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
-
-							<!-- Third column -->
-							<div class="col-lg-4 col-xs-12">
-								<!--Card-->
-								<div class="card">
-
-									<!--Card image-->
-									<div class="view overlay hm-white-slight">
-									<img class="img-fluid" src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(6).jpg" alt="Card image cap">
-										<a href="#" data-toggle="modal" data-target="#quick-look-ex">
-											<div class="mask">
-												<div class="flex-center product-quick-look">
-													<i class="fa fa-eye" aria-hidden="true"></i>
-												</div>
-											</div>
-										</a>
-									</div>
-									<!--/.Card image-->
-
-									<!--Card content-->
-									<div class="card-block text-xs-center">
-										<!--Title-->
-										<h4 class="card-title">Product Name</h4>
-										<!--Review-->
-										<div class="orange-text">
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-											<i class="fa fa-star"> </i>
-										</div>	
-										<!--Text-->
-										<p class="card-text price"><span class="green-text"><strong>$69</strong></span> <span class="grey-text"><small><s>$129</s></small></span></p>
-										
-
-										<a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</a>
-									</div>
-									<!--/.Card content-->
-
-								</div>
-								<!--/.Card-->
-							</div>
 						</div>
 						<!-- /.Third row -->
 					</section>
 					<!-- /.Products Grid -->
 				</div>
-
 				<!-- Sidebar -->
 				<div class="col-lg-3 col-xs-12">
 					<!--Panel-->
 					<div class="card mb-2">
 						<div class="card-header white-text">
-							Product Categories
+							Categorias de Productos
 						</div>
 						
 						<div class="card-block">
 							<ul class="sidebar-categories-list">
-								<li><a href="#">All Categories</a></li>
-								<li><a href="#">Accesories</a></li>
-								<li><a href="#">Bags</a></li>
-								<li><a href="#">Dresses</a></li>
-								<li><a href="#">Jackets</a></li>
-								<li><a href="#">Shoes</a></li>
-								<li><a href="#">Sweaters</a></li>
-								<li><a href="#">T-shirts</a></li>
+					           {% for c in categorias %}
+					              {% if categoria.slug == c.slug %}class="selected"{% endif %}
+					                 <li><a href="{{ c.get_absolute_url }}">{{ c.nombre }}</a></li>
+					            {% endfor %}
 							</ul>
 						</div>
 					</div>
 
 					<div class="card mb-2">
 						<div class="card-header white-text">
-							Filter by Color
+							filtrar por color
 						</div>
 						<div class="card-block">
 							<fieldset class="form-group">
 								<input type="checkbox" id="color-1">
-								<label for="color-1">White</label>
+								<label for="color-1">-</label>
 							</fieldset>
 							<fieldset class="form-group">
 								<input type="checkbox" id="color-2">
-								<label for="color-2">Beige</label>
+								<label for="color-2">-</label>
 							</fieldset>
-							<fieldset class="form-group">
-								<input type="checkbox" id="color-3">
-								<label for="color-3">Black</label>
-							</fieldset>
-							<fieldset class="form-group">
-								<input type="checkbox" id="color-4">
-								<label for="color-4">Green</label>
-							</fieldset>
-							<fieldset class="form-group">
-								<input type="checkbox" id="color-5">
-								<label for="color-5">Pink</label>
-							</fieldset>
-							<button type="button" class="btn btn-primary">Apply</button>
+							{% comment %}
+							<button type="button" class="btn btn-primary">Apply</button>	
+							{% endcomment %}
+							
 						</div>
 					</div>
 					<div class="card mb-2">
 						<div class="card-header white-text">
-							Filter by Size
+							filtrar por tamaño
 						</div>
 						<div class="card-block">
 							<fieldset class="form-group">
 								<input type="checkbox" id="size-xs">
-								<label for="size-xs">Extra Small (10)</label>
+								<label for="size-xs">-</label>
 							</fieldset>
 							<fieldset class="form-group">
 								<input type="checkbox" id="size-s">
-								<label for="size-s">Small (14)</label>
+								<label for="size-s">-</label>
 							</fieldset>
-							<fieldset class="form-group">
-								<input type="checkbox" id="size-m">
-								<label for="size-m">Medium (7)</label>
-							</fieldset>
-							<fieldset class="form-group">
-								<input type="checkbox" id="size-l">
-								<label for="size-l">Large (18)</label>
-							</fieldset>
-							<fieldset class="form-group">
-								<input type="checkbox" id="size-xl">
-								<label for="size-xl">Extra Large (21)</label>
-							</fieldset>
-							<button type="button" class="btn btn-primary">Apply</button>
+							{% comment %}
+							<button type="button" class="btn btn-primary">Apply</button>	
+							{% endcomment %}
+							
 						</div>
 					</div>
 					<!--/.Panel-->
 				</div>
 				<!-- /.Sidebar -->
-
 			</div>
 			<!-- /.Content -->
 		</div>
