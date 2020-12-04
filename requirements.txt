@@ -8,7 +8,7 @@ django-paypal==0.3.3
 djangorestframework==3.5.3
 get==0.0.0
 kombu==4.0.0
-Pillow==3.4.2
+Pillow>=7.1.0
 post==0.0.0
 public==0.0.0
 query-string==0.0.0
